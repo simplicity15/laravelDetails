@@ -2,8 +2,8 @@
 using auth "Auth::check()"
 requried pass is make Hash;
 without hash not validate user credintials
-------------------------------------
-Create Helper function
+
+-----------------Create Helper function------------
 create file on app folder helper.php
  and update composer.json
    "autoload": {
@@ -20,7 +20,14 @@ run command :
 composer dump-autoload  
 
 
---------------Controller Create-----
+--------------Controller Create----------
+php artisan make:controller controllerName     // for bussiness logic 
+
+--------------model crete ----------------
+php artisan make:model ModelName
+
+
+
 
 --------------Routes----------------
 Route::controller(Oprations::class)->group(function(){
@@ -31,3 +38,29 @@ Route::controller(Oprations::class)->group(function(){
 -------------Debugging------------------------
 \Log::warning('Login attempt failed for email: ' . $credentials['email']);
  path - > storage/log
+
+
+// Table Oprations usign Cli----
+
+
+------------------Use DataTypes in DataBase-----------------------
+
+Schema::create('posts', function (Blueprint $table) {
+    $table->id();                           // Auto-incrementing UNSIGNED BIGINT (primary key)
+    $table->string('title');                // VARCHAR equivalent column
+    $table->text('body');                   // TEXT equivalent column
+    $table->integer('view_count');          // INTEGER equivalent column
+    $table->float('rating', 8, 2);          // FLOAT equivalent column with 8 total digits and 2 decimal places
+    $table->boolean('is_published');        // BOOLEAN equivalent column
+    $table->date('published_at');           // DATE equivalent column
+    $table->time('published_time');         // TIME equivalent column
+    $table->dateTime('published_datetime'); // DATETIME equivalent column
+    $table->timestamp('created_at')->useCurrent(); // TIMESTAMP equivalent column with default value of the current timestamp
+    $table->binary('image');                // BLOB equivalent column
+    $table->json('meta');                   // JSON equivalent column
+    $table->enum('status', ['draft', 'published', 'archived']); // ENUM equivalent column
+
+    $table->timestamps();                   // Adds created_at and updated_at columns
+});
+
+
