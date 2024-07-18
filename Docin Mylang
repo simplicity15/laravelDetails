@@ -1,3 +1,10 @@
+---------For auth login---------
+using auth "Auth::check()"
+requried pass is make Hash;
+without hash not validate user credintials
+------------------------------------
+
+
 --------------Controller Create-----
 
 --------------Routes----------------
