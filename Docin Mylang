@@ -1,2 +1,11 @@
-  \Log::warning('Login attempt failed for email: ' . $credentials['email']);
+--------------Controller Create-----
+
+--------------Routes----------------
+Route::controller(Oprations::class)->group(function(){
+  Route::get('/', 'login')->name('login');
+  Route::post('/logAuth', 'logAuth')->name('logAuth');
+});
+
+-------------Debugging------------------------
+\Log::warning('Login attempt failed for email: ' . $credentials['email']);
  path - > storage/log
