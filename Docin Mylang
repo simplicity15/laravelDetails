@@ -59,6 +59,7 @@ Schema::create('posts', function (Blueprint $table) {
     $table->binary('image');                // BLOB equivalent column
     $table->json('meta');                   // JSON equivalent column
     $table->enum('status', ['draft', 'published', 'archived']); // ENUM equivalent column
+   $table->binary('image'); // BLOB equivalent column
 
     $table->timestamps();                   // Adds created_at and updated_at columns
 });
