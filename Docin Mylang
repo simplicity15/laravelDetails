@@ -16,6 +16,8 @@ create file on app folder helper.php
             "app/Helpers/helper.php"
         ]
     },
+run command :
+composer dump-autoload  
 
 
 --------------Controller Create-----
