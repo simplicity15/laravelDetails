@@ -63,5 +63,8 @@ Schema::create('posts', function (Blueprint $table) {
 
     $table->timestamps();                   // Adds created_at and updated_at columns
 });
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SELECT comm_id FROM `comment_likes` ORDER BY comm_id DESC LIMIT 5 OFFSET 1;
 
+SELECT comm_id AS salary FROM (SELECT comm_id FROM `comment_likes` ORDER BY comm_id DESC LIMIT 5) AS subquery ORDER BY comm_id ASC;
 
