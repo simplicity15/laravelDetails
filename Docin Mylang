@@ -68,3 +68,5 @@ SELECT comm_id FROM `comment_likes` ORDER BY comm_id DESC LIMIT 5 OFFSET 1;
 
 SELECT comm_id AS salary FROM (SELECT comm_id FROM `comment_likes` ORDER BY comm_id DESC LIMIT 5) AS subquery ORDER BY comm_id ASC;
 
+SELECT comm_id as h_sal FROM comment_likes t1 WHERE 2-1 = (SELECT count(DISTINCT comm_id) FROM comment_likes t2 WHERE t2.comm_id > t1.comm_id);
+
